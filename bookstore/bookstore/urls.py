@@ -1,8 +1,14 @@
 from django.contrib import admin
 from django.urls import include, path
+from .views import home
+from .views import base
+from .views import fullmetal
 
 urlpatterns = [
-    #the bottom line points to the polls.urls file    
-    path("admin/", admin.site.urls),
-    path("books/", include("books.urls")),
+    # Include the URL patterns from the 'books' app
+    path("admin/", admin.site.urls),  # admin URL pattern
+    path("books/", include("books.urls")),  # books URL pattern
+    path("", home, name='home'),  # root URL pattern
+    path("base/", base),
+    path("fullmetal/", fullmetal)
 ]
