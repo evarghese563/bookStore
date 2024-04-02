@@ -18,3 +18,33 @@ def base(request):
 
 def fullmetal(request):
     return render(request, "fullmetal.html")
+
+def vinlandSaga(request):
+    return render(request, "vinlandSaga.html")
+
+def dragonball(request):
+    return render(request, "dragonball.html")
+
+def naruto(request):
+    return render(request, "naruto.html")
+
+def onepiece(request):
+    return render(request, "onepiece.html")
+
+def chainsawman(request):
+    return render(request, "chainsawman.html")
+
+def demonslayer(request):
+    return render(request, "demonslayer.html")
+
+def myheroacademia(request):
+    return render(request, "myheroacademia.html")
+
+def attackontitan(request):
+    return render(request, "attackontitan.html")
+
+def tokyoghoul(request):
+    return render(request, "tokyoghoul.html")
+
+def manga(request):
+    return render(request, "manga.html")

@@ -1,0 +1,51 @@
+.input-group-text {
+    /* Add your custom CSS properties here */
+   background-color: orange;
+}
+
+.navbar-brand  {
+    color: orange;
+}
+
+.nav-link {
+    color: orange;
+}
+
+.navbar {
+    background-color: black !important;
+}
+.input-group.rounded {
+    margin-left: 40px;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+.bi.bi-cart {
+    color: orange;
+    margin-left: 80px;
+    margin-top: 1px;
+    font-size: 22px !important; /* Adjust the font size as needed */
+}
+
+.card {
+    width: 210px;
+    height: 300px;
+
+}
+
+.container.text-center {
+    margin-top: 20px;
+}
+
+.card-img-top {
+    width: 210px;
+    height: 280px;
+}
+
+.row.row-cols-1.row-cols-md-3.g-4 {  
+    margin-top: 30px;
+    margin-left: 70px;
+}
+
