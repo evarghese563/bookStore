@@ -13,6 +13,7 @@ from .views import myheroacademia
 from .views import attackontitan
 from .views import tokyoghoul
 from .views import manga
+from .views import squareenix
 
 urlpatterns = [
     # Include the URL patterns from the 'books' app
@@ -30,8 +31,6 @@ urlpatterns = [
     path("myheroacademia/", myheroacademia),
     path("attackontitan/", attackontitan),
     path("tokyoghoul/", tokyoghoul),
-    path("manga/", manga)
-
-
-
+    path("manga/", manga),
+    path("squareenix/", squareenix)
 ]

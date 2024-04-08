@@ -48,3 +48,6 @@ def tokyoghoul(request):
 
 def manga(request):
     return render(request, "manga.html")
+
+def squareenix(request):
+    return render(request, "squareenix.html")

@@ -15,6 +15,7 @@ urlpatterns = [
     path("myheroacademia/", views.myheroacademia, name='myheroacademia'),
     path("attackontitan/", views.attackontitan, name='attackontitan'),
     path("tokyoghoul/", views.tokyoghoul, name='tokyoghoul'),
-    path("manga/", views.manga, name='manga')
+    path("manga/", views.manga, name='manga'),
+    path("squareenix/", views.squareenix, name='squareenix')
 
 ]
