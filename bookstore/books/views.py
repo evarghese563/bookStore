@@ -49,6 +49,16 @@ def tokyoghoul(request):
 def manga(request): 
     return render(request, "manga.html")
 
+<<<<<<< HEAD
 def squareenix(request): 
     return render(request, "squareenix.html")
+=======
+def checkout(request):
+    return render(request, "checkout.html")
+def about(request):
+    return render(request, "about.html")
+def contact(request):
+    return render(request, "contact.html")
+
+>>>>>>> origin/main
 
