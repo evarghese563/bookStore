@@ -15,6 +15,9 @@ urlpatterns = [
     path("myheroacademia/", views.myheroacademia, name='myheroacademia'),
     path("attackontitan/", views.attackontitan, name='attackontitan'),
     path("tokyoghoul/", views.tokyoghoul, name='tokyoghoul'),
-    path("manga/", views.manga, name='manga')
+    path("manga/", views.manga, name='manga'),
+    path("checkout/", views.checkout, name='checkout'),
+    path("about/", views.about, name='about'),
+    path("contact/", views.contact, name='contact')
 
 ]
