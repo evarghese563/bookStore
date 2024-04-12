@@ -16,12 +16,10 @@ urlpatterns = [
     path("attackontitan/", views.attackontitan, name='attackontitan'),
     path("tokyoghoul/", views.tokyoghoul, name='tokyoghoul'),
     path("manga/", views.manga, name='manga'),
-<<<<<<< HEAD
-    path("squareenix/", views.squareenix, name='squareenix')
-=======
-    path("checkout/", views.checkout, name='checkout'),
+    path("squareenix/", views.squareenix, name='squareenix'),
     path("about/", views.about, name='about'),
-    path("contact/", views.contact, name='contact')
->>>>>>> origin/main
+    path("contact/", views.contact, name='contact'),
+    path("checkout/", views.checkout, name='checkout'),
+    path("merch/", views.merch, name='merch')
 
 ]

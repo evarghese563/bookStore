@@ -26,25 +26,17 @@
           </li>
           
           <li class="nav-item active">
-            <a class="nav-link" href="#">Manga</a>
+            <a class="nav-link" href="{% url 'manga' %}">Manga</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
-          <!--Search-->
-          <li>
-            <div class="input-group rounded">
-              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="bi bi-search"></i>
-              </span>
-            </div>
-          </li>
-         <!--Search-->
-          <i class="bi bi-cart"></i>
+          
+          <i style="margin-left: 20px;"class="bi bi-cart"></i>
+
         </ul>
       </div>
     </nav>
