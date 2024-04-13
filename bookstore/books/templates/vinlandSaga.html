@@ -35,7 +35,9 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <i style="margin-left: 20px;"class="bi bi-cart"></i>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
+          </li>
 
         </ul>
       </div>
@@ -50,7 +52,7 @@
       <td><p class="fmaP">Hardcover<br>
         Retail Price <s>$19.99</s><br>
         <b class=fmaFont >$16.99</b><span style="padding-left: 11px;">Save 15% </span><br>
-        <button tye="button" class="mangapanels">Add To Cart</button></p>       
+        <button tye="button" class="addToCart" data-loc-name="Vinland Saga 1" data-loc-price="16.99">Add To Cart</button></p>       
         </td>
         <td> <p class=ship style="margin-left: 120px;">
           Ship to Me<br> 
@@ -71,5 +73,6 @@
         Sustaining Thorfinn through his ordeal are his pride in his family and his dreams of a fertile westward land, a land without war or slavery...the land Leif called Vinland.</p>
   </div>
  
-   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'app.js' %}"></script>
   </body>

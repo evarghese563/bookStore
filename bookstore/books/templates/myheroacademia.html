@@ -32,7 +32,9 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <i style="margin-left: 20px;"class="bi bi-cart"></i>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
+          </li>
 
         </ul>
       </div>
@@ -50,7 +52,7 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $10.19 <s>$11.99</s><br><button type="button" class="mangapanels">Buy Now</button></center>
+              $10.19 <s>$11.99</s><br><button type="button" class="addToCart" data-loc-name="My Hero Academia, Vol. 1" data-loc-price="10.19">Buy Now</button></center>
             </p>
           </div>
         </div>
@@ -66,7 +68,7 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $8.49 <s>$9.99</s><br><button type="button" class="mangapanels">Buy Now</button></center>
+                $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="My Hero Academia, Vol. 1" data-loc-price="8.49">Buy Now</button></center>
             </p>
           </div>
         </div>
@@ -82,7 +84,7 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $8.49 <s>$9.99</s><br><button type="button" class="mangapanels">Buy Now</button></center>
+                $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="My Hero Academia, Vol. 5" data-loc-price="8.49">Buy Now</button></center>
             </p>
             </p>
           </div>
@@ -98,7 +100,7 @@
               ⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $8.49 <s>$9.99</s><br><button type="button" class="mangapanels">Buy Now</button></center>
+              $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="My Hero Academia, Vol. 7" data-loc-price="8.49">Buy Now</button></center>
 
             </p>
           </div>
@@ -115,7 +117,7 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $8.49 <s>$9.99</s><br><button type="button" class="mangapanels">Buy Now</button></center>
+                $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="My Hero Academia, Vol. 11" data-loc-price="8.49">Buy Now</button></center>
             </p>
           </div>
         </div>
@@ -131,7 +133,7 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $8.49 <s>$9.99</s><br><button type="button" class="mangapanels">Buy Now</button></center>
+              $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="My Hero Academia, Vol. 21" data-loc-price="8.49">Buy Now</button></center>
           </p>
         </div>
       </div>
@@ -203,4 +205,7 @@
   </footer>
   <!-- Footer -->
   </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'app.js' %}"></script>
 </html>
