@@ -49,9 +49,5 @@ def tokyoghoul(request):
 def manga(request):
     return render(request, "manga.html")
 
-def about(request):
-    return render(request, "about.html")
-def checkout(request):
-    return render(request, "checkout.html")
-def contact(request):
-    return render(request, "contact.html")
+def merch(request):
+    return render(request, "merch.html")

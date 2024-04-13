@@ -13,9 +13,7 @@ from .views import myheroacademia
 from .views import attackontitan
 from .views import tokyoghoul
 from .views import manga
-from .views import checkout
-from .views import about
-from .views import contact
+from .views import merch
 
 urlpatterns = [
     # Include the URL patterns from the 'books' app
@@ -34,10 +32,5 @@ urlpatterns = [
     path("attackontitan/", attackontitan),
     path("tokyoghoul/", tokyoghoul),
     path("manga/", manga),
-    path("checkout/", checkout),
-    path("about/", about),
-    path("contact/", contact)
-
-
-
+    path("merch/", merch)
 ]

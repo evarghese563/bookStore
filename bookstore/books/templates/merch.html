@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Django app{% endblock %}</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <!-- Include Bootstrap 5 Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include your custom CSS -->
+    <link rel="stylesheet" href="{% static 'bySeries.css' %}">
+  
+  </head>
+  <body>
+ <!--This is the main Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'base' %}">TokyoShop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'manga' %}">Manga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          
+          <i style="margin-left: 20px;"class="bi bi-cart"></i>
+        </ul>
+      </div>
+    </nav>
+
+
+    <h2 style="margin-top: 20px; margin-left: 20px;">Merchandise</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static '4573102669629_one-piece-monkey-d-luffy-masterlise-ichibansho-figure-egghead-island-ver_1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">One Piece - Monkey D. Luffy Masterlise ICHIBANSHO Figure (Egghead Island Ver.)</h5>
+            <p class="card-text">
+              <center>
+              ⭐⭐⭐⭐⭐<br>
+              Online: Preorder<br>
+              My Store: Coming Soon<br>
+              $49.99<br><button type="button" class="mangapanels">Buy Now</button></center>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static '4535123839184_jujutsu-kaisen-satoru-gojo-look-up-series-figure-suit-ver_1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">JUJUTSU KAISEN - Satoru Gojo Look Up Series Figure (Suit Ver.)</h5>
+            <p class="card-text">
+              <center>
+                ⭐⭐⭐⭐⭐<br>
+                Online: Preorder<br>
+                My Store: Coming Soon<br>
+                $33.99<br><button type="button" class="mangapanels">Buy Now</button></center>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="{% static '4582733421940_jujutsu-kaisen-toji-fushiguro-figurizma-prize-figure-encounter-ver_1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">JUJUTSU KAISEN - Toji Fushiguro FIGURIZMa Prize Figure (Encounter Ver.)</h5>
+            <p class="card-text">
+              <center>
+                ⭐⭐⭐⭐⭐<br>
+                Online: Preorder<br>
+                My Store: Coming Soon<br>
+                $31.99<br><button type="button" class="mangapanels">Buy Now</button></center>
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

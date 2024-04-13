@@ -24,28 +24,85 @@
           </li>
           
           <li class="nav-item active">
-            <a class="nav-link" href="#">Manga</a>
+            <a class="nav-link" href="{% url 'manga' %}">Manga</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
-          <!--Search-->
-          <li>
-            <div class="input-group rounded">
-              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="bi bi-search"></i>
-              </span>
-            </div>
-          </li>
-         <!--Search-->
-          <i class="bi bi-cart"></i>
+          
+          <i style="margin-left: 20px;"class="bi bi-cart"></i>
+
         </ul>
       </div>
     </nav>
     
+
+       <!-- Footer -->
+<footer class="text-center text-lg-start bg-dark text-orange">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section style="background-color: black;" class="">
+    <div style="background-color: black;" class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 style=" margin-top: 50px; " class="text-uppercase fw-bold mb-4">
+          <i class="fas fa-gem me-3"></i>  <a style="color: orange;" href="{% url 'base' %}">TokyoShop</a>
+          </h6>
+         
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 style="margin-top: 50px; color: orange;" class="text-uppercase fw-bold mb-4 text-orange">
+            <a style="color: orange;" href="{% url 'manga' %}">Products</a>
+          </h6>
+        
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 style="margin-top: 50px; color: orange;" class="text-uppercase fw-bold mb-4 text-orange">
+            <a style="color: orange;" href="{% url 'contact' %}">Contact</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 bg-dark" style="background-color: rgba(0, 0, 0, 0.05);">
+    <span style="color: orange;">© 2024 Copyright</span>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 </html>
