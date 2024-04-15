@@ -53,7 +53,16 @@
       <td><p class=fmaP>Hardcover<br>
         Retail Price <s>$25.00</s><br>
         <b class=fmaFont >$20.00</b> Save 20%<br>
-        <button tye="button" class="addToCart" data-loc-name="Fullmetal Alchemist Brotherhood" data-loc-price="20.00">Add To Cart</button></p>       
+
+        <form action="" method="POST">{% csrf_token %}
+          
+
+          <input type="hidden" name = "manga" value="Fullmetal Alchemist 20th Anniversary Book">
+          <input type="hidden" name = "price" value="20.00">
+          
+          <button tye="button" class="addToCart" data-loc-name="Fullmetal Alchemist Brotherhood" data-loc-price="20.00">Add To Cart</button></p>
+        </form>
+        <!-- <button tye="button" class="addToCart" data-loc-name="Fullmetal Alchemist Brotherhood" data-loc-price="20.00">Add To Cart</button></p>        -->
         </td>
         <td> <p class=ship>
           Ship to Me<br>
