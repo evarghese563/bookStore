@@ -19,7 +19,7 @@ $(document).ready(function() {
             Price: productPrice
         };
 
-        toCartDB(items)
+        alert("You added "+productName+" to the cart")
     });
 
 });
