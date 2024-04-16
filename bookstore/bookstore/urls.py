@@ -14,6 +14,7 @@ from .views import attackontitan
 from .views import tokyoghoul
 from .views import manga
 from .views import merch
+from .views import checkout
 
 urlpatterns = [
     # Include the URL patterns from the 'books' app
@@ -32,5 +33,6 @@ urlpatterns = [
     path("attackontitan/", attackontitan),
     path("tokyoghoul/", tokyoghoul),
     path("manga/", manga),
-    path("merch/", merch)
+    path("merch/", merch),
+    path("checkout/", checkout)
 ]

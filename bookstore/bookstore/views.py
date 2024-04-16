@@ -51,3 +51,6 @@ def manga(request):
 
 def merch(request):
     return render(request, "merch.html")
+
+def checkout(request):
+    return render(request, "checkout.html")
