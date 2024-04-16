@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.core import serializers
+from .models import Manga
 import requests
 
 
@@ -17,7 +18,17 @@ def base(request):
     return render(request, "base.html")
 
 def fullmetal(request):
-    return render(request, "fullmetal.html")
+
+    if request.method =='POST':
+        name = request.POST['manga']
+        price = request.POST['price']
+    
+        quantity = 1
+
+        newcart = Manga(name = name, price = price, quantity = quantity)
+        newcart.save()
+
+    return render(request, "fullmetal.html",{})
 
 def vinlandSaga(request): 
     return render(request, "vinlandSaga.html")
