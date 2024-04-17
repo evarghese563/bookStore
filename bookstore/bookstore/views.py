@@ -53,4 +53,11 @@ def merch(request):
     return render(request, "merch.html")
 
 def checkout(request):
-    return render(request, "checkout.html")
+    # Assuming you retrieve the parameters from the request.GET dictionary
+    name = request.GET.get('name')
+    price = request.GET.get('price')
+    image_url = request.GET.get('image_url')
+
+    # Pass parameters to the template
+    return render(request, 'checkout.html', {'name': name, 'price': price, 'image_url': image_url})
+

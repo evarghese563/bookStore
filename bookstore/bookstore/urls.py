@@ -34,5 +34,7 @@ urlpatterns = [
     path("tokyoghoul/", tokyoghoul),
     path("manga/", manga),
     path("merch/", merch),
-    path("checkout/", checkout)
+    path("checkout/", checkout),
+    path("books/fullmetal/checkout/", checkout)
+
 ]

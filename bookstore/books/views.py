@@ -1,9 +1,9 @@
-from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.core import serializers
 from .models import Manga
+from django.shortcuts import render,redirect
 import requests
 
 
@@ -17,18 +17,44 @@ def home(request):
 def base(request):
     return render(request, "base.html")
 
+
 def fullmetal(request):
+    if request.method == 'POST':
+        name = request.POST.get('manga')
+        price = request.POST.get('price')
+        image_url = request.POST.get('image_url')
+        quantity = 1  # You can adjust this if needed
 
-    if request.method =='POST':
-        name = request.POST['manga']
-        price = request.POST['price']
-    
-        quantity = 1
+        # You may need to adjust the model field names according to your Manga model
+        new_cart_item = Manga(name=name, price=price, quantity=quantity, image_url=image_url)
+        new_cart_item.save()
 
-        newcart = Manga(name = name, price = price, quantity = quantity)
-        newcart.save()
+        # Redirect to the checkout page with the newly added item
+        return redirect('checkout')  # Assuming 'checkout' is the name of your checkout URL pattern
 
-    return render(request, "fullmetal.html",{})
+    return render(request, "fullmetal.html", {})
+
+
+def add_to_cart(request, product_id):
+    # Retrieve product details
+    product = Manga.objects.get(pk=product_id)
+
+    # Save product information to the cart (not shown, typically involves creating a cart model and relating it to the product)
+
+    # Redirect to cart or checkout page
+    return redirect('checkout')
+
+
+def checkout(request):
+    # Assuming you retrieve the parameters from the request.GET dictionary
+    name = request.GET.get('name')
+    price = request.GET.get('price')
+    image_url = request.GET.get('image_url')
+
+    # Pass parameters to the template
+    return render(request, 'checkout.html', {'name': name, 'price': price, 'image_url': image_url})
+
+
 
 def vinlandSaga(request): 
     return render(request, "vinlandSaga.html")
@@ -63,9 +89,6 @@ def manga(request):
 def squareenix(request): 
     return render(request, "squareenix.html")
 
-def checkout(request): 
-    return render(request, "checkout.html")
-
 def about(request): 
     return render(request, "about.html")
 
@@ -74,6 +97,9 @@ def contact(request):
 
 def merch(request): 
     return render(request, "merch.html")
+
+
+
 
 
 
