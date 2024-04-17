@@ -57,7 +57,7 @@
           <input type="hidden" name = "manga" value="One Piece, Vol. 1">
           <input type="hidden" name = "price" value="9.59">
           
-          <button tye="button" class="addToCart" data-loc-name="One Piece, Vol. 1" data-loc-price="9.59">Add To Cart</button></p> 
+          <button tye="submit" class="addToCart" data-loc-name="One Piece, Vol. 1" data-loc-price="9.59">Add To Cart</button></p> 
         </form>
       
         </td>
@@ -79,7 +79,11 @@
 
     </p>
   </div>
- 
+  <script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'app.js' %}"></script>
   </body>

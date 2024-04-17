@@ -55,7 +55,17 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $10.19 <s>$11.99</s><br><button type="button" class="addToCart" data-loc-name="Chainsaw Man Vol. 15" data-loc-price="10.19">Add To Cart>Buy Now</button></center>
+              $10.19 <s>$11.99</s><br>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Chainsaw Man, Vol.15">
+                <input type="hidden" name = "price" value="10.19">
+                
+                <button type="submit" class="addToCart" data-loc-name="Chainsaw Man, Vol.15" data-loc-price="10.19">Buy Now</button>   
+              </form>
+            
+            </center>
             </p>
           </div>
         </div>
@@ -71,7 +81,16 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="Chainsaw Man Vol. 2" data-loc-price="8.49">Buy Now</button></center>
+                $8.49 <s>$9.99</s><br>
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="Chainsaw Man, Vol.2">
+                  <input type="hidden" name = "price" value="8.49">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="Chainsaw Man, Vol.2" data-loc-price="8.49">Buy Now</button>   
+                </form>
+              </center>
             </p>
           </div>
         </div>
@@ -87,7 +106,16 @@
                 ⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="Chainsaw Man Vol. 3" data-loc-price="8.49">Buy Now</button></center>
+                $8.49 <s>$9.99</s><br>
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="Chainsaw Man, Vol.3">
+                  <input type="hidden" name = "price" value="8.49">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="Chainsaw Man, Vol.3" data-loc-price="8.49">Buy Now</button>   
+                </form>
+              </center>
             </p>
             </p>
           </div>
@@ -103,7 +131,16 @@
               ⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="Chainsaw Man Vol. 8" data-loc-price="8.49">Buy Now</button></center>
+              $8.49 <s>$9.99</s><br>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Chainsaw Man, Vol. 8">
+                <input type="hidden" name = "price" value="8.49">
+                
+                <button type="submit" class="addToCart" data-loc-name="Chainsaw Man, Vol. 8" data-loc-price="8.49">Buy Now</button>   
+              </form>
+            </center>
 
             </p>
           </div>
@@ -120,7 +157,16 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="Chainsaw Man Vol. 11" data-loc-price="8.49">Buy Now</button></center>
+                $8.49 <s>$9.99</s><br>
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="Chainsaw Man, Vol.11">
+                  <input type="hidden" name = "price" value="8.49">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="Chainsaw Man, Vol.11" data-loc-price="8.49">Buy Now</button>   
+                </form>
+              </center>
             </p>
           </div>
         </div>
@@ -136,7 +182,16 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $8.49 <s>$9.99</s><br><button type="button" class="addToCart" data-loc-name="Chainsaw Man Vol. 4" data-loc-price="8.49">Buy Now</button></center>
+              $8.49 <s>$9.99</s><br>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Chainsaw Man, Vol.4">
+                <input type="hidden" name = "price" value="8.49">
+                
+                <button type="submit" class="addToCart" data-loc-name="Chainsaw Man, Vol.4" data-loc-price="8.49">Buy Now</button>   
+              </form>
+            </center>
           </p>
         </div>
       </div>
@@ -208,6 +263,11 @@
   </footer>
   <!-- Footer -->
 
+  <script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'app.js' %}"></script>
   </body>
