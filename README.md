@@ -13,10 +13,6 @@ urllib3-2.2.1
 
 run django server by 'python manage.py runserver' in terminal
 
-3/2/2024 (Eric) - 
-I created the bookstore backend and a simple books view page I did not do anything crazy yet.
-To view the front end all you have to do is do is run the server in the end of the URL
-
 Django admin:
 Username: Eric
 Password: password
