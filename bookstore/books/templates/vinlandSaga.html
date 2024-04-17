@@ -52,7 +52,16 @@
       <td><p class="fmaP">Hardcover<br>
         Retail Price <s>$19.99</s><br>
         <b class=fmaFont >$16.99</b><span style="padding-left: 11px;">Save 15% </span><br>
-        <button tye="button" class="addToCart" data-loc-name="Vinland Saga 1" data-loc-price="16.99">Add To Cart</button></p>       
+
+        <form action="" method="POST">{% csrf_token %}
+          
+
+          <input type="hidden" name = "manga" value="Vinland Saga 1">
+          <input type="hidden" name = "price" value="16.99">
+          
+          <button tye="button" class="addToCart" data-loc-name="Vinland Saga 1" data-loc-price="16.99">Add To Cart</button></p>      
+        </form>
+ 
         </td>
         <td> <p class=ship style="margin-left: 120px;">
           Ship to Me<br> 

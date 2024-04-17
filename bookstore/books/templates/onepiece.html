@@ -50,7 +50,16 @@
       <td><p class=fmaP>Paperback<br>
         Retail Price <s>$11.99</s><br>
         <b class=fmaFont >$9.59</b> Save 20%<br>
-        <button tye="button" class="addToCart" data-loc-name="One Piece, Vol. 1" data-loc-price="9.59">Add To Cart</button></p>       
+
+        <form action="" method="POST">{% csrf_token %}
+          
+
+          <input type="hidden" name = "manga" value="One Piece, Vol. 1">
+          <input type="hidden" name = "price" value="9.59">
+          
+          <button tye="button" class="addToCart" data-loc-name="One Piece, Vol. 1" data-loc-price="9.59">Add To Cart</button></p> 
+        </form>
+      
         </td>
         <td> <p class=ship style="margin-left: 130px;">
           Ship to Me<br>

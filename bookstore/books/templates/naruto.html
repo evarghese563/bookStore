@@ -51,7 +51,16 @@
       <td><p class=fmaP>Paperback<br>
         Retail Price <s>$16.99</s><br>
         <b class=fmaFont >$13.59</b>Save 20%<br>
-        <button tye="button" class="addToCart" data-loc-name="Naruto (3-In-1 Edition), Vol. 1" data-loc-price="13.59">Add To Cart</button></p>       
+
+        <form action="" method="POST">{% csrf_token %}
+          
+
+          <input type="hidden" name = "manga" value="Naruto (3-In-1 Edition), Vol. 1">
+          <input type="hidden" name = "price" value="13.59">
+          
+          <button tye="button" class="addToCart" data-loc-name="Naruto (3-In-1 Edition), Vol. 1" data-loc-price="13.59">Add To Cart</button></p>    
+        </form>
+           
         </td>
         <td> <p class=ship>
           Ship to Me<br>
