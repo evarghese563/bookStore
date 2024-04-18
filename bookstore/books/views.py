@@ -6,6 +6,7 @@ from django.core import serializers
 from .models import Manga
 import requests
 
+print('Testing')
 
 def home(request):
     return render(request,"books.html")
@@ -79,8 +80,7 @@ def pushToDB(request):
     if request.method =='POST':
         name = request.POST['manga']
         price = request.POST['price']
-    
+    # 111
         quantity = 1
-
         newcart = Manga(name = name, price = price, quantity = quantity)
         newcart.save()
