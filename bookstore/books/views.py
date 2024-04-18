@@ -1,17 +1,7 @@
-<<<<<<< HEAD
-
-from django.http import HttpResponse
-from django.http import JsonResponse
-from django.core import serializers
-from .models import Manga
-from django.shortcuts import render,redirect
-import requests
-=======
 from django.shortcuts import render
 from .models import Manga
 from django.http import HttpResponse
 from django.template import loader
->>>>>>> upstream/main
 
 
 def home(request):
@@ -20,49 +10,9 @@ def home(request):
 def base(request):
     return render(request, "base.html")
 
-
 def fullmetal(request):
-<<<<<<< HEAD
-    if request.method == 'POST':
-        name = request.POST.get('manga')
-        price = request.POST.get('price')
-        image_url = request.POST.get('image_url')
-        quantity = 1  # You can adjust this if needed
-
-        # You may need to adjust the model field names according to your Manga model
-        new_cart_item = Manga(name=name, price=price, quantity=quantity, image_url=image_url)
-        new_cart_item.save()
-
-        # Redirect to the checkout page with the newly added item
-        return redirect('checkout')  # Assuming 'checkout' is the name of your checkout URL pattern
-
-    return render(request, "fullmetal.html", {})
-
-
-def add_to_cart(request, product_id):
-    # Retrieve product details
-    product = Manga.objects.get(pk=product_id)
-
-    # Save product information to the cart (not shown, typically involves creating a cart model and relating it to the product)
-
-    # Redirect to cart or checkout page
-    return redirect('checkout')
-
-
-def checkout(request):
-    # Assuming you retrieve the parameters from the request.GET dictionary
-    name = request.GET.get('name')
-    price = request.GET.get('price')
-    image_url = request.GET.get('image_url')
-
-    # Pass parameters to the template
-    return render(request, 'checkout.html', {'name': name, 'price': price, 'image_url': image_url})
-
-
-=======
     pushToDB(request)
     return render(request, "fullmetal.html",{})
->>>>>>> upstream/main
 
 def vinlandSaga(request):
     pushToDB(request) 
@@ -107,9 +57,6 @@ def squareenix(request):
     pushToDB(request) 
     return render(request, "squareenix.html")
 
-<<<<<<< HEAD
-def about(request): 
-=======
 def checkout(request):
     # Handle displaying DataBase data onto checkout page
     
@@ -120,7 +67,6 @@ def checkout(request):
     return HttpResponse(site.render(context, request))
 
 def about(request):
->>>>>>> upstream/main
     return render(request, "about.html")
 
 def contact(request):
@@ -141,11 +87,6 @@ def clearCart(request):
     return HttpResponse(site.render(context, request))
 #==========================================================================================================
 
-<<<<<<< HEAD
-
-
-
-=======
 def pushToDB(request):
     if request.method =='POST':
         name = request.POST['manga']
@@ -153,4 +94,3 @@ def pushToDB(request):
         quantity = 1
         newcart = Manga(name = name, price = price, quantity = quantity)
         newcart.save()
->>>>>>> upstream/main

@@ -37,58 +37,13 @@
           </li>
           
           <li class="nav-item">
-<<<<<<< HEAD
-          <a style="color: orange;"href="/books/fullmetal/checkout/"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
-=======
             <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
->>>>>>> upstream/main
           </li>
 
         </ul>
       </div>
     </nav>
     <div class="mainD">
-<<<<<<< HEAD
-      <table>
-          <div class="title">
-              <p>
-                  <b class="fmaFont">Fullmetal Alchemist 20th Anniversary Book</b><br>
-                  by Hiromu Arakawa and Square Enix<br>
-                  ⭐⭐⭐⭐⭐
-              </p>
-          </div>
-          <tr>
-              <td><img src="{% static '1974738507_b.webp' %}"></td>
-              <td>
-                  <p class="fmaP">Hardcover<br>
-                      Retail Price <s>$25.00</s><br>
-                      <b class="fmaFont">$20.00</b> Save 20%
-                  </p>
-              </td>
-              <td>
-                  <p class="ship">
-                      Ship to Me<br>
-                      <span>In Stock</span><br>
-                      <i class="bi bi-truck"></i> <b>FREE</b> Shipping<br>  
-                      <span>In-Store Pickup</span><br>
-                      Limited Quantity.<br>
-                      Available for delivery
-                  </p>
-              </td>
-          </tr>
-          <tr > <!-- New row for the button -->
-            <td colspan="3" style="position: relative; top: -150px; position: relative; right: -300px;"> <!-- Apply relative positioning to move the row upward -->
-              <form id="addToCartForm" action="{% url 'fullmetal' %}" method="POST">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="Fullmetal Alchemist 20th Anniversary Book">
-                  <input type="hidden" name="price" value="20.00">
-                  <input type="hidden" name="image_url" value="{% static '1974738507_b.webp' %}">
-                  <button type="button" onclick="addToCart(event)" class="addToCart" data-loc-name="Fullmetal Alchemist Brotherhood" data-loc-price="20" data-loc-image="{% static '1974738507_b.webp' %}" data-checkout-url="{% url 'checkout' %}">Add to Cart</button>
-                </form>
-              </td>
-          </tr>
-      </table>
-=======
     <table>
       <div class="title"><p><b class= fmaFont>Fullmetal Alchemist 20th Anniversary Book</b><br>
         by Hiromu Arakawa and Square Enix<br>
@@ -120,9 +75,7 @@
         </td>
       </tr>
     </table>
->>>>>>> upstream/main
   </div>
-  
   <div class="overview">
     <h2>Overview</h2>
     <p class="product"><b>Celebrate 20 years of Fullmetal Alchemist</b> with this stunning <b>tribute</b> to the genre-defining classic!<br><br>
@@ -131,15 +84,11 @@
        Alchemist vividly to life in anime, film, video games, novels, and more.</p>
   </div>
 
-<<<<<<< HEAD
-  <script src="{% static 'index.js' %}"></script>
-=======
   <script>
     if ( window.history.replaceState ) {
       window.history.replaceState( null, null, window.location.href );
     }
   </script>
->>>>>>> upstream/main
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'app.js' %}"></script>
   </body>
