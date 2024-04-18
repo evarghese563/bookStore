@@ -21,6 +21,10 @@ urlpatterns = [
     path("contact/", views.contact, name='contact'),
     path("checkout/", views.checkout, name='checkout'),
     path("merch/", views.merch, name='merch'),
+<<<<<<< HEAD
     path("books/fullmetal/checkout/", views.checkout, name='checkout')
+=======
+    path("clearcart/", views.clearCart, name='clearcart'),
+>>>>>>> upstream/main
 
 ]

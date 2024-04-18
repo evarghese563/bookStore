@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {
     $('.addToCart').click(function(event) {
         // Prevent the default form submission behavior
@@ -7,10 +8,23 @@ $(document).ready(function() {
         var productName = $(this).data('loc-name');
         var productPrice = $(this).data('loc-price');
         var imageUrl = $(this).data('loc-image');
+=======
+
+$(document).ready(function() {
+    // alert("jQuery is working!");
+
+
+    $('.addToCart').click(function() {
+
+        var productName = $(this).data('loc-name');
+        var productPrice = $(this).data('loc-price');
+
+>>>>>>> upstream/main
 
         console.log("Adding to cart:");
         console.log("Product Name: " + productName);
         console.log("Product Price: $" + productPrice);
+<<<<<<< HEAD
         console.log("Image URL: " + imageUrl);
 
         // Check if any of the variables are undefined
@@ -28,3 +42,12 @@ $(document).ready(function() {
         window.location.href = checkoutUrl;
     });
 });
+=======
+        
+        alert("You added "+productName+" to the cart")
+    });
+
+});
+
+
+>>>>>>> upstream/main

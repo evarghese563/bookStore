@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'byseries.css' %}">
   </head>
   <body>
+
     <!--This is the main Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="{% url 'base' %}">TokyoShop</a>
@@ -22,6 +23,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'base' %}">Home</a>
           </li>
+          
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'manga' %}">Manga</a>
           </li>
@@ -38,31 +40,29 @@
 
         </ul>
       </div>
+
+
     </nav>
-
+    
     <br>
-    <br>
-    <br>
-    <br>
-    <br><br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br>
-    <br>
-        <h3 style="text-align: center">TokyoShop</h3>
-        <h4 style="text-align: center">31 Marlborough Lane
-        <br>Reston, VA 20191
-        </h4>
-        <h4 style="text-align: center">Phone: (732)-726-9092</h4>
-        <h4 style="text-align: center">Store Hours: Mon-Fri 9-9</h4>
- 
-
+    <table border='1'>
+        <tr>
+          <th>Name</th>
+          <th>          Price</th>
+          <th>Quantity</th>
+        </tr>
+          <tr>
+            <br>
+            <td><B>Empty Cart</B></td>
+            <td></td>
+            <td></td>
+          </tr>
+        
+      </table>
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br>
- 
+   
 
 
        <!-- Footer -->
@@ -81,6 +81,9 @@
 
   <!-- Section: Links  -->
   <section style="background-color: black;" class="">
+
+    <br><br><br><br><br>
+
     <div style="background-color: black;" class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">

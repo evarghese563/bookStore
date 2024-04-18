@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -5,20 +6,23 @@ from django.core import serializers
 from .models import Manga
 from django.shortcuts import render,redirect
 import requests
+=======
+from django.shortcuts import render
+from .models import Manga
+from django.http import HttpResponse
+from django.template import loader
+>>>>>>> upstream/main
 
 
 def home(request):
-    url = 'https://openlibrary.org/search.json?q=the+lord+of+the+rings'
-    response = requests.get(url)
-    data = response.json()
-    print(data)
-    return render(request,"books.html",{'data':data})
+    return render(request,"books.html")
 
 def base(request):
     return render(request, "base.html")
 
 
 def fullmetal(request):
+<<<<<<< HEAD
     if request.method == 'POST':
         name = request.POST.get('manga')
         price = request.POST.get('price')
@@ -55,51 +59,98 @@ def checkout(request):
     return render(request, 'checkout.html', {'name': name, 'price': price, 'image_url': image_url})
 
 
+=======
+    pushToDB(request)
+    return render(request, "fullmetal.html",{})
+>>>>>>> upstream/main
 
-def vinlandSaga(request): 
+def vinlandSaga(request):
+    pushToDB(request) 
     return render(request, "vinlandSaga.html")
 
 def dragonball(request): 
+    pushToDB(request)
     return render(request, "dragonball.html")
 
 def naruto(request): 
+    pushToDB(request)
     return render(request, "naruto.html")
 
-def onepiece(request): 
+def onepiece(request):
+    pushToDB(request) 
     return render(request, "onepiece.html")
 
-def chainsawman(request): 
+def chainsawman(request):
+    pushToDB(request) 
     return render(request, "chainsawman.html")
 
-def demonslayer(request): 
+def demonslayer(request):
+    pushToDB(request) 
     return render(request, "demonslayer.html")
 
-def myheroacademia(request): 
+def myheroacademia(request):
+    pushToDB(request) 
     return render(request, "myheroacademia.html")
 
-def attackontitan(request): 
-    return render(request, "attackontitan.html")
+def attackontitan(request):
+    pushToDB(request) 
+    return render(request, "attackontitan.html",{})
 
-def tokyoghoul(request): 
+def tokyoghoul(request):
+    pushToDB(request) 
     return render(request, "tokyoghoul.html")
 
-def manga(request): 
+def manga(request):
     return render(request, "manga.html")
 
-def squareenix(request): 
+def squareenix(request):
+    pushToDB(request) 
     return render(request, "squareenix.html")
 
+<<<<<<< HEAD
 def about(request): 
+=======
+def checkout(request):
+    # Handle displaying DataBase data onto checkout page
+    
+    data = Manga.objects.all().values()
+   
+    site = loader.get_template('checkout.html')
+    context = {'data': data,}
+    return HttpResponse(site.render(context, request))
+
+def about(request):
+>>>>>>> upstream/main
     return render(request, "about.html")
 
-def contact(request): 
+def contact(request):
     return render(request, "contact.html")
 
 def merch(request): 
     return render(request, "merch.html")
 
 
+def clearCart(request):
+    # Clear the current state of the cart
+    data = Manga.objects.all()
+    data.delete()
+    # Extract data from Data Base
+    data = Manga.objects.all().values()
+    site = loader.get_template('clearcart.html')
+    context = {'data': data,}
+    return HttpResponse(site.render(context, request))
+#==========================================================================================================
+
+<<<<<<< HEAD
 
 
 
-
+=======
+def pushToDB(request):
+    if request.method =='POST':
+        name = request.POST['manga']
+        price = request.POST['price']
+        quantity = 1
+        newcart = Manga(name = name, price = price, quantity = quantity)
+        newcart.save()
+>>>>>>> upstream/main

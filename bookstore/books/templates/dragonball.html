@@ -36,11 +36,17 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a> <li class="nav-item active">
           
           
+<<<<<<< HEAD
 
           <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
 
           
               
+=======
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
+              </li>
+>>>>>>> upstream/main
         </ul>
       </div>
     </nav>
@@ -55,9 +61,24 @@
         Retail Price <s>$24.99</s><br>
         <b class=fmaFont >$19.99</b> Save 15%<br>
 
+<<<<<<< HEAD
         <button onclick="addToCart(); addToCheckout('{{ STATIC_URL }}1421520591_b.jpg');" type="button" class="mangapanels">Add To Cart</button>
       </td>
 
+=======
+        <form action="" method="POST">{% csrf_token %}
+          
+
+          <input type="hidden" name = "manga" value="Dragon Ball (Vizbig Edition), Vol. 1">
+          <input type="hidden" name = "price" value="19.99">
+          
+          <button tye="submit" class="addToCart" data-loc-name="Dragon Ball (Vizbig Edition), Vol. 1" data-loc-price="19.99">Add To Cart</button></p>   
+        </form>
+
+            
+        
+      
+>>>>>>> upstream/main
         </td>
         <td> <p class=ship style="margin-left: 120px;">
           Ship to Me<br>
@@ -83,6 +104,7 @@
         
         Enter 16-year-old Bulma, a scientific genius who has constructed a radar to detect the exact locations of the Dragon Balls. She's on a mission to find all seven orbs, but first she must convince young Son Goku to join her on her quest. With a monkey tail, super-human strength, and a magic staff for a weapon, Son Goku's ready to set out on the adventure of a lifetime...</p>
   </div>
+<<<<<<< HEAD
 
    
   <script src="{% static 'index.js' %}"></script>
@@ -96,3 +118,14 @@
 
 
  
+=======
+  <script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'app.js' %}"></script>
+
+  </body>
+>>>>>>> upstream/main
