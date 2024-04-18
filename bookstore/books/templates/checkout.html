@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'byseries.css' %}">
   </head>
   <body>
+
     <!--This is the main Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="{% url 'base' %}">TokyoShop</a>
@@ -36,11 +37,43 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
           </li>
-
+      
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'clearcart' %}">Clear Cart</a>
+          </li>
+          
+      
         </ul>
       </div>
+
+
     </nav>
     
+    <br>
+    <table border='5'>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      {% for x in data %}
+        <tr>
+          <td>{{ x.name }}</td>
+            <td>{{ x.price }}</td>
+          <td>{{ x.quantity }}</td>
+        </tr>
+        
+      {% endfor %}
+     
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 
        <!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-orange">
@@ -58,6 +91,9 @@
 
   <!-- Section: Links  -->
   <section style="background-color: black;" class="">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
     <div style="background-color: black;" class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
