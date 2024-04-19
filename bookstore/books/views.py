@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from .models import Manga
+
 from django.http import HttpResponse
-from django.template import loader
+from django.http import JsonResponse
+from django.core import serializers
+from .models import Manga
+import requests
 
 
 def home(request):
@@ -58,13 +61,8 @@ def squareenix(request):
     return render(request, "squareenix.html")
 
 def checkout(request):
-    # Handle displaying DataBase data onto checkout page
-    
-    data = Manga.objects.all().values()
-   
-    site = loader.get_template('checkout.html')
-    context = {'data': data,}
-    return HttpResponse(site.render(context, request))
+
+    return render(request, "checkout.html")
 
 def about(request):
     return render(request, "about.html")
@@ -76,21 +74,13 @@ def merch(request):
     return render(request, "merch.html")
 
 
-def clearCart(request):
-    # Clear the current state of the cart
-    data = Manga.objects.all()
-    data.delete()
-    # Extract data from Data Base
-    data = Manga.objects.all().values()
-    site = loader.get_template('clearcart.html')
-    context = {'data': data,}
-    return HttpResponse(site.render(context, request))
-#==========================================================================================================
 
 def pushToDB(request):
     if request.method =='POST':
         name = request.POST['manga']
         price = request.POST['price']
+    
         quantity = 1
+
         newcart = Manga(name = name, price = price, quantity = quantity)
         newcart.save()
