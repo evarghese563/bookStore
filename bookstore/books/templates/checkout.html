@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django app{% endblock %}</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <!-- Include Bootstrap 5 Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Include your custom CSS -->
+    <link rel="stylesheet" href="{% static 'byseries.css' %}">
+  </head>
+  <body>
+    <!--This is the main Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'base' %}">TokyoShop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'base' %}">Home</a>
+          </li>
+          
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'manga' %}">Manga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          
+          <a style="color: orange;" href="{% url 'checkout' %}">
+            <i style="margin-left: 20px;" class="bi bi-cart">
+                <span style="color: orange;" id="cart-count">{{ cart_count }}</span>
+            </i>
+        </a>
+
+      
+          <li class="nav-item">
+            <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}">Clear Cart</a>
+          </li>
+          
+      
+        </ul>
+      </div>
+    </nav>
+    <h1>Checkout</h1>
+    <br>
+    <table style="margin-left: 20px;" border='5'>
+      <tr>
+     
+      </tr>
+      {% for x in data %}
+        <tr>
+          <td style="padding: 10px; font-size: large;">{{ x.name }}</td>
+          <td style="padding: 10px; font-size: large;">${{ x.price }}</td>
+          <td style="padding: 10px; font-size: large;">{{ x.quantity }}</td>
+          <td style="padding: 10px;"><img src="{{ x.image }}" alt="{{ x.name }}" width="100"></td>
+        </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
+        <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
+      </tr>
+    </table>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+       <!-- Footer -->
+<footer class="text-center text-lg-start bg-dark text-orange">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section style="background-color: black;" class="">
+    <div style="background-color: black;" class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 style=" margin-top: 50px; " class="text-uppercase fw-bold mb-4">
+          <i class="fas fa-gem me-3"></i>  <a style="color: orange;" href="{% url 'base' %}">TokyoShop</a>
+          </h6>
+         
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 style="margin-top: 50px; color: orange;" class="text-uppercase fw-bold mb-4 text-orange">
+            <a style="color: orange;" href="{% url 'manga' %}">Products</a>
+          </h6>
+        
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 style="margin-top: 50px; color: orange;" class="text-uppercase fw-bold mb-4 text-orange">
+            <a style="color: orange;" href="{% url 'contact' %}">Contact</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4 bg-dark" style="background-color: rgba(0, 0, 0, 0.05);">
+    <span style="color: orange;">© 2024 Copyright</span>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</body>
+<script type="text/javascript" src="{% static 'app.js' %}"></script>
+
+<script>
+  // Function to calculate and update total price
+  function updateTotalPrice() {
+    // Retrieve all table rows containing item prices
+    var prices = document.querySelectorAll('table tr td:nth-child(2)');
+    var totalPrice = 0;
+    // Loop through each item price and sum them up
+    prices.forEach(function(itemPrice) {
+      totalPrice += parseFloat(itemPrice.textContent.replace('$', ''));
+    });
+    // Update the total price in the HTML
+    document.getElementById('total-price').textContent = '$' + totalPrice.toFixed(2);
+  }
+
+  // Call the function to update total price when the page loads
+  window.addEventListener('load', updateTotalPrice);
+</script>
+</html>
