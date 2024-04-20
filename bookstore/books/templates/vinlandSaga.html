@@ -35,9 +35,11 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
-          </li>
+          <a style="color: orange;" href="{% url 'checkout' %}">
+            <i style="margin-left: 20px;" class="bi bi-cart">
+                <span style="color: orange;" id="cart-count">{{ cart_count }}</span>
+            </i>
+        </a>
 
         </ul>
       </div>
@@ -52,20 +54,9 @@
       <td><p class="fmaP">Hardcover<br>
         Retail Price <s>$19.99</s><br>
         <b class=fmaFont >$16.99</b><span style="padding-left: 11px;">Save 15% </span><br>
-
-        <form action="" method="POST">{% csrf_token %}
-          
-
-          <input type="hidden" name = "manga" value="Vinland Saga 1">
-          <input type="hidden" name = "price" value="16.99">
-          
-          <button tye="submit" class="addToCart" data-loc-name="Vinland Saga 1" data-loc-price="16.99">Add To Cart</button></p>      
-        </form>
- 
         </td>
         <td> <p class=ship style="margin-left: 120px;">
           Ship to Me<br> 
-
           <span>In Stock</span><br>
           <i class="bi bi-truck"></i> <b>FREE</b> Shipping<br>  
          <span>In-Store Pickup</span><br>
@@ -73,7 +64,19 @@
           Available for delivery</p>
         </td>
       </tr>
-    </table>
+      <tr > <!-- New row for the button -->
+        <td colspan="3" style="position: relative; top: -145px; position: relative; right: -295px;"> 
+      <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+        {% csrf_token %}
+        <input type="hidden" name="manga" value="Vinland Saga 1">
+        <input type="hidden" name="price" value="16.99">
+        <!-- Update the value of the image input field using JavaScript -->
+        <input type="hidden" id="imageInput" name="image" value="{% static '1612624200_b.jpg' %}">
+        <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Add to Cart</span></button>
+    </form>
+</td>
+</tr>
+</table>
   </div>
   <div class="overview">
     <h2>Overview</h2>
