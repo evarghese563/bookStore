@@ -33,9 +33,7 @@
                     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                   </li>
                   
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
-                  </li>
+                  <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
 
             </ul>
         </div>
@@ -54,13 +52,12 @@
                         Online: Preorder<br>
                         My Store: Coming Soon<br>
                         $10.19 <s>$11.99</s><br>
-                        <form action="" method="POST">{% csrf_token %}
-          
-
-                            <input type="hidden" name = "manga" value="Mob Psycho 100 Manga Volume 13">
-                            <input type="hidden" name = "price" value="10.19">
-                            
-                            <button type="submit" class="addToCart" data-loc-name="Mob Psycho 100 Manga Volume 13" data-loc-price="10.19">Buy Now</button>   
+                        <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                            {% csrf_token %}
+                            <input type="hidden" name="manga" value="Mob Psycho 100 Manga Volume 13">
+                            <input type="hidden" name="price" value="10.19">
+                            <input type="hidden" id="imageInput" name="image" value="{% static '9781506737980_manga-mob-psycho-100-volume-3-primary.jpg' %}">
+                            <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
                         </form>
                     </center>
                     </p>
@@ -91,13 +88,12 @@
                         Online: Preorder<br>
                         My Store: Coming Soon<br>
                         $10.39 <s>$12.99</s><br>
-                        <form action="" method="POST">{% csrf_token %}
-          
-
-                            <input type="hidden" name = "manga" value="The Apothecary Diaries Manga Volume 10">
-                            <input type="hidden" name = "price" value="10.39">
-                            
-                            <button type="submit" class="addToCart" data-loc-name="The Apothecary Diaries Manga Volume 10" data-loc-price="10.39">Buy Now</button>   
+                        <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                            {% csrf_token %}
+                            <input type="hidden" name="manga" value="The Apothecary Diaries Manga Volume 10">
+                            <input type="hidden" name="price" value="10.39">
+                            <input type="hidden" id="imageInput" name="image" value="{% static '9781646091362_manga-the-apothecary-diaries-volume-10-primary.jpg' %}">
+                            <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
                         </form>
                     </center>
                     </p>
@@ -125,13 +121,12 @@
                         Online: Hardcover<br>
                         My Store: Coming Soon<br>
                         $18.39 <s>$22.99</s><br>
-                        <form action="" method="POST">{% csrf_token %}
-          
-
-                            <input type="hidden" name = "manga" value="Soul Eater: The Perfect Edition Manga Volume 13 (Hardcover)">
-                            <input type="hidden" name = "price" value="18.39">
-                            
-                            <button type="submit" class="addToCart" data-loc-name="Soul Eater: The Perfect Edition Manga Volume 13 (Hardcover)" data-loc-price="18.39">Buy Now</button>   
+                        <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                            {% csrf_token %}
+                            <input type="hidden" name="manga" value="Soul Eater: The Perfect Edition Manga Volume 13 (Hardcover)">
+                            <input type="hidden" name="price" value="18.39">
+                            <input type="hidden" id="imageInput" name="image" value="{% static '9781646090136_manga-soul-eater-the-perfect-edition-volume-13-primary.jpg' %}">
+                            <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
                         </form>
                     </center>
                     </p>
