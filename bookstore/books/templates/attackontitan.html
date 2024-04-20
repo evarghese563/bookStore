@@ -173,14 +173,18 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $9.34<s> $10.99</s><br>
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="Attack on Titan 28">
-                <input type="hidden" name="price" value="9.34">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1632367831_b.jpg' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form>
+<<<<<<< HEAD
+              $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 28" data-loc-price="9.34">Buy Now</button></center>
+=======
+              $9.34 <s> $10.99</s><br>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Attack on Titan 28">
+                <input type="hidden" name = "price" value="9.34">
+                
+                <button type="submit" class="addToCart" data-loc-name="Attack on Titan 28" data-loc-price="9.34">Buy Now</button>  
+              </form>
             </center>
           </p>
         </div>

@@ -48,3 +48,4 @@ var clearCartB = document.getElementById("clear-cart-btn");
 if (clearCartB) {
     clearCartB.addEventListener('On click', clearCart);
 }
+
