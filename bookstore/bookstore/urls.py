@@ -15,6 +15,7 @@ from .views import tokyoghoul
 from .views import manga
 from .views import merch
 
+
 urlpatterns = [
     # Include the URL patterns from the 'books' app
     path("admin/", admin.site.urls),  # admin URL pattern
