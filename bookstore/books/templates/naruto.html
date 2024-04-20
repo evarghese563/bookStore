@@ -34,9 +34,8 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
-          </li>
+          <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
+
 
         </ul>
       </div>
@@ -51,21 +50,6 @@
       <td><p class=fmaP>Paperback<br>
         Retail Price <s>$16.99</s><br>
         <b class=fmaFont >$13.59</b>Save 20%<br>
-<<<<<<< HEAD
-        <button tye="button" class="addToCart" data-loc-name="Naruto (3-In-1 Edition), Vol. 1" data-loc-price="13.59">Add To Cart</button></p>       
-=======
-
-        <form action="" method="POST">{% csrf_token %}
-          
-
-          <input type="hidden" name = "manga" value="Naruto (3-In-1 Edition), Vol. 1">
-          <input type="hidden" name = "price" value="13.59">
-          
-          <button tye="submit" class="addToCart" data-loc-name="Naruto (3-In-1 Edition), Vol. 1" data-loc-price="13.59">Add To Cart</button></p>    
-        </form>
-           
->>>>>>> upstream/main
-        </td>
         <td> <p class=ship>
           Ship to Me<br>
 
@@ -75,22 +59,27 @@
           Limited Quantity.<br>
           Available for delivery</p>
         </td>
-      </tr>
-    </table>
-  </div>
+        <tr > <!-- New row for the button -->
+          <td colspan="3" style="position: relative; top: -145px; position: relative; right: -295px;"> 
+        <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+          {% csrf_token %}
+          <input type="hidden" name="manga" value="Naruto (3-In-1 Edition), Vol. 1">
+          <input type="hidden" name="price" value="13.59">
+          <input type="hidden" id="imageInput" name="image" value="{% static '1421539896_b.jpg' %}">
+          <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Add to Cart</span></button>
+      </form>
+  </td>
+  </tr>
+  </table>
   <div class="overview">
     <h2>Overview</h2>
     <p class="product"><b>The epic ninja adventure that became a global phenomenon</b> Naruto is a young shinobi with an incorrigible knack for mischief. He's got a wild sense of humor, but Naruto is completely serious about his mission to be the world's greatest ninja <b>This Chakra-Powered Omnibus Contains Volumes 1, 2 and 3 of Naruto</b> No one takes Naruto seriously at Ninja Academy. Especially not the other students, who all are competing to be the best ninja ever and someday lead Konoha, the Village Hidden in the Leaves. Naruto and his classmates are about to embark on an adventure that takes them far beyond Ninja Academy, beyond Konoha, beyond anything they ever imagined. What is Naruto's true destiny? The epic story that has sold millions worldwide begins now.</p>
   </div>
-<<<<<<< HEAD
- 
-=======
   <script>
     if ( window.history.replaceState ) {
       window.history.replaceState( null, null, window.location.href );
     }
     </script>
->>>>>>> upstream/main
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'app.js' %}"></script>
   </body>

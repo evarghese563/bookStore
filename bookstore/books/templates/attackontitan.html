@@ -33,9 +33,8 @@
                 <a class="nav-link" href="{% url 'contact' %}">Contact</a>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
-              </li>
+              <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
+
 
         </ul>
       </div>
@@ -53,21 +52,15 @@
                 ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-<<<<<<< HEAD
-              $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 1" data-loc-price="9.34">Buy Now</button></center>
-=======
               $9.34 <s> $10.99</s><br>
-              <form action="" method="POST">{% csrf_token %}
-          
-
-                <input type="hidden" name = "manga" value="Attack on Titan 1">
-                <input type="hidden" name = "price" value="9.34">
-                
-                <button type="submit" class="addToCart" data-loc-name="Attack on Titan Vol. 1" data-loc-price="9.34">Buy Now</button>  
-              </form>
-              
+              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                {% csrf_token %}
+                <input type="hidden" name="manga" value="Attack on Titan 1">
+                <input type="hidden" name="price" value="9.34">
+                <input type="hidden" id="imageInput" name="image" value="{% static '1612620248_b.jpg' %}">
+                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+            </form>
               </center>
->>>>>>> upstream/main
             </p>
           </div>
         </div>
@@ -83,21 +76,15 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-<<<<<<< HEAD
-                $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 2" data-loc-price="9.34">Buy Now</button></center>
-=======
                 $9.34 <s> $10.99</s><br>
-                <form action="" method="POST">{% csrf_token %}
-          
-
-                  <input type="hidden" name = "manga" value="Attack on Titan 2">
-                  <input type="hidden" name = "price" value="9.34">
-                  
-                  <button type="submit" class="addToCart" data-loc-name="Attack on Titan 2" data-loc-price="9.34">Buy Now</button>  
-                </form>
-              
+                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                  {% csrf_token %}
+                  <input type="hidden" name="manga" value="Attack on Titan 2">
+                  <input type="hidden" name="price" value="9.34">
+                  <input type="hidden" id="imageInput" name="image" value="{% static '1612620256_b.webp' %}">
+                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+              </form>
               </center>
->>>>>>> upstream/main
             </p>
           </div>
         </div>
@@ -113,20 +100,15 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-<<<<<<< HEAD
-                $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 3" data-loc-price="9.34">Buy Now</button></center>
-=======
                 $9.34 <s> $10.99</s><br>
-                <form action="" method="POST">{% csrf_token %}
-          
-
-                  <input type="hidden" name = "manga" value="Attack on Titan 2">
-                  <input type="hidden" name = "price" value="9.34">
-                  
-                  <button type="submit" class="addToCart" data-loc-name="Attack on Titan 3" data-loc-price="9.34">Buy Now</button>  
-                </form>
+                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                  {% csrf_token %}
+                  <input type="hidden" name="manga" value="Attack on Titan 3">
+                  <input type="hidden" name="price" value="9.34">
+                  <input type="hidden" id="imageInput" name="image" value="{% static '1612620264_b.jpg' %}">
+                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+              </form>
               </center>
->>>>>>> upstream/main
             </p>
             </p>
           </div>
@@ -142,20 +124,15 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-<<<<<<< HEAD
-              $9.34 s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 33" data-loc-price="9.34">Buy Now</button></center>
-=======
               $9.34 s> $10.99</s><br>
-              <form action="" method="POST">{% csrf_token %}
-          
-
-                <input type="hidden" name = "manga" value="Attack on Titan 2">
-                <input type="hidden" name = "price" value="9.34">
-                
-                <button type="submit" class="addToCart" data-loc-name="Attack on Titan 33" data-loc-price="9.34">Buy Now</button>  
-              </form>
+              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                {% csrf_token %}
+                <input type="hidden" name="manga" value="Attack on Titan 33">
+                <input type="hidden" name="price" value="9.34">
+                <input type="hidden" id="imageInput" name="image" value="{% static '1646510267_b.webp' %}">
+                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+            </form>
             </center>
->>>>>>> upstream/main
 
             </p>
           </div>
@@ -172,20 +149,15 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-<<<<<<< HEAD
-                $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 9" data-loc-price="9.34">Buy Now</button></center>
-=======
                 $9.34 <s> $10.99</s><br>
-                <form action="" method="POST">{% csrf_token %}
-          
-
-                  <input type="hidden" name = "manga" value="Attack on Titan, Volume 9">
-                  <input type="hidden" name = "price" value="9.34">
-                  
-                  <button type="submit" class="addToCart" data-loc-name="Attack on Titan, Volume 9" data-loc-price="9.34">Buy Now</button>  
-                </form>
+                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                  {% csrf_token %}
+                  <input type="hidden" name="manga" value="Attack on Titan, Volume 9">
+                  <input type="hidden" name="price" value="9.34">
+                  <input type="hidden" id="imageInput" name="image" value="{% static '1612625487_b.jpg' %}">
+                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+              </form>
               </center>
->>>>>>> upstream/main
             </p>
           </div>
         </div>
@@ -201,20 +173,15 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-<<<<<<< HEAD
-              $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 28" data-loc-price="9.34">Buy Now</button></center>
-=======
-              $9.34 <s> $10.99</s><br>
-              <form action="" method="POST">{% csrf_token %}
-          
-
-                <input type="hidden" name = "manga" value="Attack on Titan 28">
-                <input type="hidden" name = "price" value="9.34">
-                
-                <button type="submit" class="addToCart" data-loc-name="Attack on Titan 28" data-loc-price="9.34">Buy Now</button>  
-              </form>
+              $9.34<s> $10.99</s><br>
+              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                {% csrf_token %}
+                <input type="hidden" name="manga" value="Attack on Titan 28">
+                <input type="hidden" name="price" value="9.34">
+                <input type="hidden" id="imageInput" name="image" value="{% static '1632367831_b.jpg' %}">
+                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+            </form>
             </center>
->>>>>>> upstream/main
           </p>
         </div>
       </div>
@@ -286,14 +253,11 @@
 </footer>
 <!-- Footer -->
 
-<<<<<<< HEAD
-=======
 <script>
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
   </script>
->>>>>>> upstream/main
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'app.js' %}"></script>
   </body>

@@ -34,12 +34,15 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
-          </li>
+          <a style="color: orange;" href="{% url 'checkout' %}">
+            <i style="margin-left: 20px;" class="bi bi-cart">
+                <span style="color: orange;" id="cart-count">{{ cart_count }}</span>
+            </i>
+        </a>
+
       
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'clearcart' %}">Clear Cart</a>
+            <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}">Clear Cart</a>
           </li>
           
       
@@ -48,24 +51,26 @@
 
 
     </nav>
-    
+    <h1>Checkout</h1>
     <br>
-    <table border='5'>
+    <table style="margin-left: 20px;" border='5'>
       <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
+     
       </tr>
       {% for x in data %}
         <tr>
-          <td>{{ x.name }}</td>
-            <td>{{ x.price }}</td>
-          <td>{{ x.quantity }}</td>
+          <td style="padding: 10px; font-size: large;">{{ x.name }}</td>
+          <td style="padding: 10px; font-size: large;">${{ x.price }}</td>
+          <td style="padding: 10px; font-size: large;">{{ x.quantity }}</td>
+          <td style="padding: 10px;"><img src="{{ x.image }}" alt="{{ x.name }}" width="100"></td>
         </tr>
-        
       {% endfor %}
-     
+      <tr>
+        <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
+        <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
+      </tr>
     </table>
+
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br>
@@ -143,4 +148,23 @@
 </footer>
 <!-- Footer -->
 </body>
+<script type="text/javascript" src="{% static 'app.js' %}"></script>
+
+<script>
+  // Function to calculate and update total price
+  function updateTotalPrice() {
+    // Retrieve all table rows containing item prices
+    var prices = document.querySelectorAll('table tr td:nth-child(2)');
+    var totalPrice = 0;
+    // Loop through each item price and sum them up
+    prices.forEach(function(itemPrice) {
+      totalPrice += parseFloat(itemPrice.textContent.replace('$', ''));
+    });
+    // Update the total price in the HTML
+    document.getElementById('total-price').textContent = '$' + totalPrice.toFixed(2);
+  }
+
+  // Call the function to update total price when the page loads
+  window.addEventListener('load', updateTotalPrice);
+</script>
 </html>

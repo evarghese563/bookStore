@@ -35,11 +35,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a> <li class="nav-item active">
           
-          
-
+        
           <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
 
-          
               
         </ul>
       </div>
@@ -53,12 +51,8 @@
       <td><img src="{% static '1421520591_b.jpg' %}"></td>
       <td><p class=fmaP>Paperback<br>
         Retail Price <s>$24.99</s><br>
-        <b class=fmaFont >$19.99</b> Save 15%<br>
-
-        <button onclick="addToCart(); addToCheckout('{{ STATIC_URL }}1421520591_b.jpg');" type="button" class="mangapanels">Add To Cart</button>
+        <b class=fmaFont >$19.99</b> Save 15%<br>      
       </td>
-
-        </td>
         <td> <p class=ship style="margin-left: 120px;">
           Ship to Me<br>
 
@@ -68,9 +62,18 @@
           Limited Quantity.<br>
           Available for delivery</p>
         </td>
-      </tr>
-    </table>
-  </div>
+        <tr > <!-- New row for the button -->
+          <td colspan="3" style="position: relative; top: -145px; position: relative; right: -295px;"> 
+        <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+          {% csrf_token %}
+          <input type="hidden" name="manga" value="Dragon Ball (Vizbig Edition), Vol. 1">
+          <input type="hidden" name="price" value="19.99">
+          <input type="hidden" id="imageInput" name="image" value="{% static '1421520591_b.jpg' %}">
+          <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Add to Cart</span></button>
+      </form>
+  </td>
+  </tr>
+  </table>
   <div class="overview">
     <h2>Overview</h2>
     <p class="product"><b>Change your perspective: get BIG</b><br><br>

@@ -7,6 +7,7 @@ from django.template import loader
 def home(request):
     return render(request,"books.html")
 
+
 def base(request):
     return render(request, "base.html")
 
@@ -58,7 +59,6 @@ def squareenix(request):
     return render(request, "squareenix.html")
 
 def checkout(request):
-    # Handle displaying DataBase data onto checkout page
     
     data = Manga.objects.all().values()
    
@@ -88,9 +88,29 @@ def clearCart(request):
 #==========================================================================================================
 
 def pushToDB(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         name = request.POST['manga']
         price = request.POST['price']
+        image = request.POST['image']
+
+        # Print or log the value of image
+        print("Image Path:", image)
+
         quantity = 1
-        newcart = Manga(name = name, price = price, quantity = quantity)
-        newcart.save()
+
+        # Check if the item already exists in the database
+        existing_item = Manga.objects.filter(name=name).first()
+
+        if existing_item:
+            # If the item exists, update the quantity
+            existing_item.price /= existing_item.quantity
+            existing_item.quantity += 1
+            existing_item.price = existing_item.price * existing_item.quantity
+            existing_item.save()
+        else:
+            # If the item doesn't exist, create a new entry
+            new_cart = Manga(name=name, price=price, quantity=quantity, image=image)
+            new_cart.save()
+
+    
+

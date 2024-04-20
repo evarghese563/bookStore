@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,10 +34,11 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
-          </li>
-
+          <a style="color: orange;" href="{% url 'checkout' %}">
+            <i style="margin-left: 20px;" class="bi bi-cart">
+                <span style="color: orange;" id="cart-count">{{ cart_count }}</span>
+            </i>
+        </a>
         </ul>
       </div>
 
