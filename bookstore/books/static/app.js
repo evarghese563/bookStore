@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // gets cartcount from local storage and sets to initialized count
-    var initializedCount = parseInt(localStorage.getItem("cartCount")) || 0;
+    var count = parseInt(localStorage.getItem("cartCount")) || 0;
     // sets all html elements with id cart-count to the value of initializedCount
-    document.getElementById("cart-count").textContent = initializedCount;
+    document.getElementById("cart-count").textContent = count;
 });
 // ----------------------------------------------------------------------------------
-function clearCart() {
+function cartClear() {
     // Removes cartCount from local storage
     localStorage.removeItem("cartCount"); 
     // sets all html elements with id cart-count to 0
@@ -42,10 +42,10 @@ function clearCart() {
 }
 
 // Add event listener to clear cart button
-var clearCartB = document.getElementById("clear-cart-btn");
+var cartClearB = document.getElementById("clear-cart-btn");
 // If the user clicks on the clear cart button on the checkout page
 // The if statement will activate the clearCart function
-if (clearCartB) {
-    clearCartB.addEventListener('On click', clearCart);
+if (cartClearB) {
+    cartClearB.addEventListener('On click', cartClear);
 }
 
