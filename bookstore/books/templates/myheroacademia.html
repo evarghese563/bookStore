@@ -32,8 +32,9 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
-
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
+          </li>
 
         </ul>
       </div>
@@ -52,13 +53,14 @@
               Online: Preorder<br>
               My Store: Coming Soon<br>
               $10.19 <s>$11.99</s><br>
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="My Hero Academia, Vol. 1">
-                <input type="hidden" name="price" value="10.19">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1421582694_b.webp' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="My Hero Academia, Vol. 1">
+                <input type="hidden" name = "price" value="10.19">
+                
+                <button type="submit" class="addToCart" data-loc-name="My Hero Academia, Vol. 1" data-loc-price="10.19">Buy Now</button>   
+              </form>
             </center>
             </p>
           </div>
@@ -76,13 +78,15 @@
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
                 $8.49 <s>$9.99</s><br>
-                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="My Hero Academia, Vol. 2">
-                  <input type="hidden" name="price" value="8.49">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '1421582708_b.webp' %}">
-                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-              </form>
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="My Hero Academia, Vol. 2">
+                  <input type="hidden" name = "price" value="10.19">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="My Hero Academia, Vol. 2" data-loc-price="8.49">Buy Now</button>   
+                </form>
+              
               </center>
             </p>
           </div>
@@ -100,13 +104,14 @@
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
                 $8.49 <s>$9.99</s><br>
-                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="My Hero Academia, Vol. 5">
-                  <input type="hidden" name="price" value="8.49">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '1421587025_b.webp' %}">
-                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-              </form> 
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="My Hero Academia, Vol. 5">
+                  <input type="hidden" name = "price" value="10.19">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="My Hero Academia, Vol. 5" data-loc-price="8.49">Buy Now</button>   
+                </form>
               </center>
             </p>
             </p>
@@ -124,13 +129,14 @@
               Online: Preorder<br>
               My Store: Coming Soon<br>
               $8.49 <s>$9.99</s><br>
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="My Hero Academia, Vol. 7">
-                <input type="hidden" name="price" value="8.49">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1421590409_b.jpg' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form> 
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="My Hero Academia, Vol. 7">
+                <input type="hidden" name = "price" value="8.49">
+                
+                <button type="submit" class="addToCart" data-loc-name="My Hero Academia, Vol. 7" data-loc-price="8.49">Buy Now</button>   
+              </form>
             </center>
 
             </p>
@@ -149,13 +155,14 @@
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
                 $8.49 <s>$9.99</s><br>
-                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="My Hero Academia, Vol. 11">
-                  <input type="hidden" name="price" value="8.49">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '1421595834_b.jpg' %}">
-                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-              </form> 
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="My Hero Academia, Vol. 11">
+                  <input type="hidden" name = "price" value="8.49">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="My Hero Academia, Vol. 11" data-loc-price="8.49">Buy Now</button>   
+                </form>
               </center>
             </p>
           </div>
@@ -173,13 +180,14 @@
               Online: Preorder<br>
               My Store: Coming Soon<br>
               $8.49 <s>$9.99</s><br>
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="My Hero Academia, Vol. 21">
-                <input type="hidden" name="price" value="8.49">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1974709507_b.jpg' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form> 
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="My Hero Academia, Vol. 21">
+                <input type="hidden" name = "price" value="8.49">
+                
+                <button type="submit" class="addToCart" data-loc-name="My Hero Academia, Vol. 21" data-loc-price="8.49">Buy Now</button>   
+              </form>
             
             </center>
           </p>

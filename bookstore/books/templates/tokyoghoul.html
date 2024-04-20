@@ -32,8 +32,9 @@
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           
-          <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
-
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"></i></a>
+          </li>
 
         </ul>
       </div>
@@ -53,13 +54,14 @@
               My Store: Coming Soon<br>
               $11.04 <s> $12.99</s><br>
               
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="Tokyo Ghoul, Vol. 3">
-                <input type="hidden" name="price" value="11.04">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1421580381_b.jpg' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Tokyo Ghoul, Vol. 3">
+                <input type="hidden" name = "price" value="11.04">
+                
+                <button type="submit" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 3" data-loc-price="11.04">Buy Now</button>   
+              </form>
             </center>
               
               <!-- <button type="button" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 3" data-loc-price="11.04">Buy Now</button></center> -->
@@ -79,13 +81,15 @@
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
                 $11.04 <s> $12.99</s><br>
-                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="Tokyo Ghoul, Vol. 4">
-                  <input type="hidden" name="price" value="11.04">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '142158039X_b.jpg' %}">
-                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-              </form>
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="Tokyo Ghoul, Vol. 4">
+                  <input type="hidden" name = "price" value="11.04">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 4" data-loc-price="11.04">Buy Now</button>   
+                </form>
+              
               </center>
             </p>
           </div>
@@ -104,13 +108,15 @@
                 My Store: Coming Soon<br>
                 $11.04 <s> $12.99</s><br>
 
-                <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="Tokyo Ghoul, Vol. 5">
-                  <input type="hidden" name="price" value="11.04">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '1421580403_b.jpg' %}">
-                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-              </form>
+                <form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="Tokyo Ghoul, Vol. 5">
+                  <input type="hidden" name = "price" value="11.04">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 5" data-loc-price="11.04">Buy Now</button>   
+                </form>
+              
               </center>
             </p>
             </p>
@@ -128,13 +134,14 @@
               Online: Preorder<br>
               My Store: Coming Soon<br>
               $11.04<s>$12.99</s><br>
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="Tokyo Ghoul, Vol. 8">
-                <input type="hidden" name="price" value="11.04">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1421580438_b.jpg' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form>
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Tokyo Ghoul, Vol. 8">
+                <input type="hidden" name = "price" value="11.04">
+                
+                <button type="submit" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 8" data-loc-price="11.04">Buy Now</button>   
+              </form>
             </center>
 
             </p>
@@ -152,13 +159,14 @@
                 ⭐⭐⭐⭐⭐<br>
                 Online: Preorder<br>
                 My Store: Coming Soon<br>
-                $11.04 <s> $12.99</s><br><form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                  {% csrf_token %}
-                  <input type="hidden" name="manga" value="Tokyo Ghoul, Vol. 11">
-                  <input type="hidden" name="price" value="11.04">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '1421580462_b.jpg' %}">
-                  <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-              </form></center>
+                $11.04 <s> $12.99</s><br><form action="" method="POST">{% csrf_token %}
+          
+
+                  <input type="hidden" name = "manga" value="Tokyo Ghoul, Vol. 11">
+                  <input type="hidden" name = "price" value="11.04">
+                  
+                  <button type="submit" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 11" data-loc-price="11.04">Buy Now</button>   
+                </form></center>
             </p>
           </div>
         </div>
@@ -174,14 +182,16 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $11.04 <s> $12.99</s><br> 
-              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-                {% csrf_token %}
-                <input type="hidden" name="manga" value="Tokyo Ghoul, Vol. 13">
-                <input type="hidden" name="price" value="11.04">
-                <input type="hidden" id="imageInput" name="image" value="{% static '1421590425_b.jpg' %}">
-                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
-            </form>
+              $11.04 <s> $12.99</s><br>
+              
+              <form action="" method="POST">{% csrf_token %}
+          
+
+                <input type="hidden" name = "manga" value="Tokyo Ghoul, Vol. 13">
+                <input type="hidden" name = "price" value="11.04">
+                
+                <button type="submit" class="addToCart" data-loc-name="Tokyo Ghoul, Vol. 13" data-loc-price="11.04">Buy Now</button>   
+              </form>
           </p>
         </div>
       </div>
