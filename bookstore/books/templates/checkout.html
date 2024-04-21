@@ -55,30 +55,31 @@
       <tr>
      
       </tr>
-      {% for x in data %}
-        <tr>
-          <td style="padding: 10px; font-size: large;">{{ x.name }}</td>
-          <td style="padding: 10px; font-size: large;">${{ x.price }}</td>
-          <td style="padding: 10px; font-size: large;">{{ x.quantity }}</td>
-          <td style="padding: 10px;"><img src="{{ x.image }}" alt="{{ x.name }}" width="100"></td>
-        </tr>
-      
-      <tr>
-        <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
-        <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
-      </tr>
-      {% empty %} 
-      <tr>
-        <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
-        <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
-      </tr>
-      {% endfor %}
+      {% if data %}
+        {% for x in data %}
+          <tr>
+            <td style="padding: 10px; font-size: large;">{{ x.name }}</td>
+            <td class = "prices" style="padding: 10px; font-size: large;">${{ x.price }}</td>
+            <td style="padding: 10px; font-size: large;">{{ x.quantity }}</td>
+            <td style="padding: 10px;"><img src="{{ x.image }}" alt="{{ x.name }}" width="100"></td>
+          </tr>
+        {% endfor %}
 
+        <tr>
+          <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
+          <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
+          <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
+        </tr>
+      {% endif %}
     </table>
     {% if data %}
     <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}"><button> Clear Cart</button></a>
     
-    <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}"><button> Checkout</button></a>
+    <a onclick=checkOut() class="nav-link" href="{% url 'clearcart' %}"><button> Checkout</button></a>
     {% endif %}
 
 
@@ -158,20 +159,21 @@
 <script type="text/javascript" src="{% static 'app.js' %}"></script>
 
 <script>
-  // Function to calculate and update total price
+  // calculates total price
   function updateTotalPrice() {
-    // Retrieve all table rows containing item prices
-    var prices = document.querySelectorAll('table tr td:nth-child(2)');
-    var totalPrice = 0;
-    // Loop through each item price and sum them up
-    prices.forEach(function(itemPrice) {
-      totalPrice += parseFloat(itemPrice.textContent.replace('$', ''));
-    });
-    // Update the total price in the HTML
-    document.getElementById('total-price').textContent = '$' + totalPrice.toFixed(2);
-  }
+  // gets all table rows with class="prices"
+  let total = 0, prices = document.querySelectorAll('tbody .prices');
 
-  // Call the function to update total price when the page loads
-  window.addEventListener('load', updateTotalPrice);
+  // Loops through each item price and sum them up
+  for (let i = 0; i < prices.length; i++) 
+      total += parseFloat(prices[i].textContent.replace('$', ''));
+  
+  // update the total price int html
+  document.getElementById('total-price').textContent = '$' + total.toFixed(2);
+}
+   // function gets called to update total upon page load
+   window.addEventListener('load', updateTotalPrice);
 </script>
+
+
 </html>

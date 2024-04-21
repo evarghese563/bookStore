@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'base' %}">Home</a>
+                <a class="nav-link" href="#">Home</a>
               </li>
         
               <li class="nav-item active">
@@ -34,8 +34,6 @@
               </li>
               
               <a style="color: orange;"href="{% url 'checkout' %}"><i style="margin-left: 20px;"class="bi bi-cart"><span style="color: orange;" id="cart-count">{{ cart_count }}</span></i></a>
-
-
         </ul>
       </div>
     </nav>
@@ -173,16 +171,14 @@
               ⭐⭐⭐⭐⭐<br>
               Online: Preorder<br>
               My Store: Coming Soon<br>
-              $9.34 <s> $10.99</s><br><button type="button" class="addToCart" data-loc-name="Attack on Titan Vol. 28" data-loc-price="9.34">Buy Now</button></center>
               $9.34 <s> $10.99</s><br>
-              <form action="" method="POST">{% csrf_token %}
-          
-
-                <input type="hidden" name = "manga" value="Attack on Titan 28">
-                <input type="hidden" name = "price" value="9.34">
-                
-                <button type="submit" class="addToCart" data-loc-name="Attack on Titan 28" data-loc-price="9.34">Buy Now</button>  
-              </form>
+              <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
+                {% csrf_token %}
+                <input type="hidden" name="manga" value="Attack on Titan, Volume 28">
+                <input type="hidden" name="price" value="9.34">
+                <input type="hidden" id="imageInput" name="image" value="{% static '1632367831_b.jpg' %}">
+                <button type="submit" onclick="addToCart()" class="addToCart"><span style="color: black">Buy Now</span></button>
+            </form>
             </center>
           </p>
         </div>

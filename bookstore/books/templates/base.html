@@ -166,6 +166,8 @@
     </div>
     
   </div>
+
+
     <!--Best Selling Manga-->
     <h3>Shop By Series</h3>
     <br>
@@ -180,28 +182,7 @@
       </tr>
     </table>
     <br>
-    <h3>Buy Some Bundles</h3>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col">
-          <img style="width: 500px;" class="bundles" src="{% static 'd0f07182fad0793712948c938fd2b10b.jpg' %}">
-        </div>
-        <div class="col">
-          <img style="width: 500px;" class="bundles" src="{% static '6153e7982b5c6ef6ff6f12615ada83f2.jpg' %}">
-        </div>
-        <div class="col">
-          <br>
-          <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
-            {% csrf_token %}
-            <!-- Add your input fields here -->
-            <input type="hidden" name="manga" value="JUJUTSU KAISEN - Satoru Gojo Look Up Series Figure (Suit Ver.)">
-                  <input type="hidden" name="price" value="33.99">
-                  <input type="hidden" id="imageInput" name="image" value="{% static '8cbad94afb0bd6bd235cdc917a9c7f83.jpg' %}">
-            <!-- Image with onclick event to trigger form submission -->
-            <img style="width: 500px; cursor: pointer;" class="bundles" src="{% static '8cbad94afb0bd6bd235cdc917a9c7f83.jpg' %}" onclick="submitForm()">
-          </form>
-      </div>
-    </div>
+      
     </div><br>
    <!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-orange">
