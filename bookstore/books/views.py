@@ -76,6 +76,7 @@ def contact(request):
     return render(request, "contact.html")
 
 def merch(request): 
+    pushToDB(request)
     return render(request, "merch.html")
 
 

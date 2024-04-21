@@ -61,8 +61,6 @@
                         </form>
                     </center>
                     </p>
-                    <h3 style="font-size: 15px;">Description</h3>
-                    <button onclick="toggleDescription('desc1')" id="button1">+</button>
                     <div id="desc1" class="myDiv" style="display: none;">
                         <p class="Description" style="font-size: 11px;">
                             Mob Psycho 100 Manga Volume 13 features story and art by ONE.
@@ -97,8 +95,6 @@
                         </form>
                     </center>
                     </p>
-                    <h3 style="font-size: 15px;">Description</h3>
-                    <button onclick="toggleDescription('desc2')" id="button2">+</button>
                     <div id="desc2" class="myDiv" style="display: none;">
                         <p class="Description" style="font-size: 11px;">
                             The Apothecary Diaries manga volume 10 features story by Natsu Hyuuga and art by Nekokurage.
@@ -119,7 +115,6 @@
                         <center>(Paperback)<br>
                         ⭐⭐⭐⭐<br>
                         Online: Hardcover<br>
-                        My Store: Coming Soon<br>
                         $18.39 <s>$22.99</s><br>
                         <form action="" method="POST" enctype="multipart/form-data" id="addToCartForm">
                             {% csrf_token %}
@@ -130,8 +125,6 @@
                         </form>
                     </center>
                     </p>
-                    <h3 style="font-size: 15px;">Description</h3>
-                    <button onclick="toggleDescription('desc3')" id="button3">+</button>
                     <div id="desc3" class="myDiv" style="display: none;">
                         <p class="Description" style="font-size: 11px;">
                             Soul Eater: The Perfect Edition manga volume 13 collects approximately 1½ original volumes in an omnibus hardcover edition which features story and art by Atsushi Ohkubo.
@@ -143,20 +136,6 @@ Even if so, are they prepared to take on the threats that lurk outside?
             </div>
         </div>
     </div>
-    <script>
-        function toggleDescription(id) {
-            const desc = document.getElementById(id);
-            const button = document.getElementById('button' + id.charAt(id.length-1));
-            if (desc.style.display === 'none') {
-                desc.style.display = 'block';
-                button.textContent = '-';
-            } else {
-                desc.style.display = 'none';
-                button.textContent = '+';
-            }
-        }
-    </script>
-
 <script>
     if ( window.history.replaceState ) {
       window.history.replaceState( null, null, window.location.href );
