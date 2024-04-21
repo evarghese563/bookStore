@@ -39,10 +39,10 @@
             </i>
         </a>
 
-      
+<!--       
           <li class="nav-item">
             <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}">Clear Cart</a>
-          </li>
+          </li> -->
           
       
         </ul>
@@ -50,6 +50,7 @@
     </nav>
     <h1>Checkout</h1>
     <br>
+    
     <table style="margin-left: 20px;" border='5'>
       <tr>
      
@@ -61,12 +62,24 @@
           <td style="padding: 10px; font-size: large;">{{ x.quantity }}</td>
           <td style="padding: 10px;"><img src="{{ x.image }}" alt="{{ x.name }}" width="100"></td>
         </tr>
-      {% endfor %}
+      
       <tr>
         <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
         <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
       </tr>
+      {% empty %} 
+      <tr>
+        <td colspan="3" style="text-align: right; font-size: large;"><b>Total Price:</b></td>
+        <td id="total-price" style="padding: 10px; font-size: large;">$0.00</td>
+      </tr>
+      {% endfor %}
+
     </table>
+    {% if data %}
+    <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}"><button> Clear Cart</button></a>
+    
+    <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}"><button> Checkout</button></a>
+    {% endif %}
 
 
     <br><br><br><br><br><br><br><br><br><br><br><br>

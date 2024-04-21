@@ -41,6 +41,15 @@ function clearCart() {
     alert("Cart cleared successfully");
 }
 
+function checkout() {
+    // Removes cartCount from local storage
+    localStorage.removeItem("cartCount"); 
+    // sets all html elements with id cart-count to 0
+    document.getElementById("cart-count").textContent = "0"; 
+    //alerts user that cart was cleared
+    alert("You have successfully checkout");
+}
+
 // Add event listener to clear cart button
 var clearCartB = document.getElementById("clear-cart-btn");
 // If the user clicks on the clear cart button on the checkout page
