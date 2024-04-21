@@ -86,8 +86,8 @@ def clearCart(request):
     # Extract data from Data Base
     data = Manga.objects.all().values()
     site = loader.get_template('clearcart.html')
-    context = {'data': data,}
-    return HttpResponse(site.render(context, request))
+    webSite = {'data': data,}
+    return HttpResponse(site.render(webSite, request))
 
 
 def pushToDB(request):
