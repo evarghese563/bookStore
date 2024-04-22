@@ -16,7 +16,7 @@ Python 3.10.11
 
 - charset-normalizer-3.3.2 
 
-requests-2.31.0 
+- requests-2.31.0 
 
 - urllib3-2.2.1
 
