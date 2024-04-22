@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- Include your custom CSS -->
     <link rel="stylesheet" href="{% static 'byseries.css' %}">
+
+    <style>
+
+      .checkout-buttons{
+        margin-left: 1.2rem;
+        margin-top: 1rem;
+        display:flex;
+        
+      }
+
+      .checkout-button1{
+        margin-right: 1rem;
+      }
+
+      button{
+        background-color: orange;
+      }
+
+    </style>
+
   </head>
   <body>
     <!--This is the main Navigation Bar-->
@@ -77,19 +97,26 @@
       {% endif %}
     </table>
     {% if data %}
-    <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}"><button> Clear Cart</button></a>
+    <div class = "checkout-buttons">
+
+      <div class = "checkout-button1">
+        <a onclick=clearCart() class="nav-link" href="{% url 'clearcart' %}"><button> Clear Cart</button></a>
+      </div>
+      <div class="checkout-button2">
+        <a onclick=checkOut() class="nav-link" href="{% url 'clearcart' %}"><button> Checkout</button></a>
+      </div>
+      
+
+    </div>
     
-    <a onclick=checkOut() class="nav-link" href="{% url 'clearcart' %}"><button> Checkout</button></a>
     {% endif %}
 
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+
+
+
 
        <!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-orange">
